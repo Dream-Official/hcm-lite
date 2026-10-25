@@ -452,7 +452,7 @@ function handleSetup(e) {
 
   if (!company) { setErr('company', true); valid = false; } else setErr('company', false);
   if (!name)    { setErr('adminname', true); valid = false; } else setErr('adminname', false);
-  if (!email || !/^[^s@]+@[^s@]+.[^s@]+$/.test(email)) { setErr('adminemail', true); valid = false; } else setErr('adminemail', false);
+  if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { setErr('adminemail', true); valid = false; } else setErr('adminemail', false);
   const { has } = checkPasswordStrength(pw);
   if (!has.len || !has.num || !has.upper) { setErr('pw', true); valid = false; } else setErr('pw', false);
   if (pw !== confirm) { setErr('confirm', true); valid = false; } else setErr('confirm', false);
